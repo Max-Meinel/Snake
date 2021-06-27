@@ -17,7 +17,8 @@ public class Singleplayer implements Runnable {
         Clip background = sound.playSoundLoop("src/Sounds/background.wav");
 
         while (!p1.isGameOver()) {
-            SnakeBody.UpdateArrayList(p1);
+            SnakeBody body = new SnakeBody();
+            body.UpdateArrayList(p1);
             if (p1.getDirection() == 1) {
                 p1.setHead_y(p1.getHead_y() - 1);
                 p1.setDirectionBefore(1);
@@ -34,8 +35,10 @@ public class Singleplayer implements Runnable {
                 p1.setHead_x(p1.getHead_x() + 1);
                 p1.setDirectionBefore(4);
             }
-            Collision.CheckCollision(p1);
-            Apple.SpawnApple(p1);
+            Collision collision = new Collision();
+            collision.CheckCollision(p1);
+            Apple apple = new Apple();
+            apple.SpawnApple(p1);
             GUI.d.repaint();
             GUI.refreshScore();
             try {

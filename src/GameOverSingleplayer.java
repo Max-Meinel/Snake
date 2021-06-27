@@ -48,7 +48,8 @@ class GameOverSingleplayer implements Runnable {
         panel.add(highscore);
 
         try {
-            highScore = String.valueOf(SaveData.getHighscore());
+            SaveData saveData = new SaveData();
+            highScore = String.valueOf(saveData.getHighscore());
         } catch (IOException e) {
             e.printStackTrace();
         }

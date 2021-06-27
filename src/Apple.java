@@ -1,16 +1,18 @@
 import java.util.Random;
 
 public class Apple {
-    public static void SpawnApple(Player player) {
+    public void SpawnApple(Player player) {
         if (player.getHead_x() == player.getApple_x() && player.getHead_y() == player.getApple_y()) {
             Sound sound = new Sound();
             sound.playSound("src/Sounds/eatingApple.wav");
             player.setScore(player.getScore() + 10);
-            SnakeBody.RefreshNewTail(player);
-            SpawnAppleAt(player);
+            SnakeBody body = new SnakeBody();
+            body.RefreshNewTail(player);
+            Apple apple = new Apple();
+            apple.SpawnAppleAt(player);
         }
     }
-    public static void SpawnAppleAt(Player player) {
+    public void SpawnAppleAt(Player player) {
         Random rand = new Random();
         boolean repeat = true;
         int x = rand.nextInt(16);

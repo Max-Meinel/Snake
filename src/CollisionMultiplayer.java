@@ -1,5 +1,5 @@
 public class CollisionMultiplayer {
-    public static void PlayerCollision(Player p1, Player p2) {
+    public void PlayerCollision(Player p1, Player p2) {
         boolean resetP1 = false;
         boolean resetP2 = false;
         if (!p1.isGameOver() && !p2.isGameOver()) {
@@ -31,9 +31,12 @@ public class CollisionMultiplayer {
             }
         }
         if (resetP1) {
+            Sound sound = new Sound();
+            sound.playSound("src/Sounds/crash.wav");
             p1.setGameOver(true);
         }
-        if (resetP2) {
+        if (resetP2) {Sound sound = new Sound();
+            sound.playSound("src/Sounds/crash.wav");
             p2.setGameOver(true);
         }
     }

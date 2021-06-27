@@ -10,7 +10,7 @@ public class Sound {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static Clip playSound(String name) {
+	public Clip playSound(String name) {
 		try {
 			Clip clip = AudioSystem.getClip();
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(name));
@@ -22,14 +22,13 @@ public class Sound {
 			Clip clip = null;
 			return clip;
 		}
-
 	}
 
 	public static void stopClip(Clip clip) {
 		clip.stop();
 	}
 
-	public static Clip playSoundLoop(String name) {
+	public Clip playSoundLoop(String name) {
 		try {
 			Clip clip = AudioSystem.getClip();
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(name));

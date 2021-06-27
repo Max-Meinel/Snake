@@ -4,16 +4,15 @@ import java.awt.event.*;
 import java.io.IOException;
 
 public class MainMenu {
-    public static int posX = 0;
-    public static int posY = 0;
+    static int posX = 0;
+    static int posY = 0;
 
-    private static boolean isSingleplayer = true;
-    private static boolean isOverlayVisible = false;
-    private static boolean areRulesVisible = false;
-    private static boolean isGerman = false;
-    private static String savedHighscore = "0";
-    private static Sound sound = new Sound();
-
+    static boolean isSingleplayer = true;
+    static boolean isOverlayVisible = false;
+    static boolean areRulesVisible = false;
+    static boolean isGerman = false;
+    static String savedHighscore = "0";
+    static Sound sound = new Sound();
     public static void main(String[] args) throws IOException {
         Menu();
     }
@@ -231,7 +230,8 @@ public class MainMenu {
         panel.add(labelHighscoreText);
 
         try {
-            savedHighscore = String.valueOf(SaveData.getHighscore());
+            SaveData saveData = new SaveData();
+            savedHighscore = String.valueOf(saveData.getHighscore());
         } catch (IOException e) {
             e.printStackTrace();
         }

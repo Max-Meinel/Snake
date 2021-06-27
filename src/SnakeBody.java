@@ -1,7 +1,6 @@
 public class SnakeBody {
 
-    public static void UpdateArrayList(Player player) {
-
+    public void UpdateArrayList(Player player) {
         Tail help = new Tail(player.getHead_x(), player.getHead_y());
         Tail help_2 = new Tail(0, 0);
 
@@ -16,7 +15,7 @@ public class SnakeBody {
             help.setY(help_2.getY());
         }
     }
-    public static void RefreshNewTail(Player player) {
+    public void RefreshNewTail(Player player) {
         player.addTail(new Tail(player.getTail(player.getLength() - 1).getX(), player.getTail(player.getLength() - 1).getY()));
     }
 }

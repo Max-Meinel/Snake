@@ -31,7 +31,8 @@ public class Multiplayer implements Runnable {
 
         while (!p1.isGameOver() || !p2.isGameOver()) {
             if (!p1.isGameOver()) {
-                SnakeBody.UpdateArrayList(p1);
+                SnakeBody body = new SnakeBody();
+                body.UpdateArrayList(p1);
                 if (Players.getPlayer(0).getDirection() == 1) {
                     p1.setHead_y(p1.getHead_y() - 1);
                     p1.setDirectionBefore(1);
@@ -48,11 +49,14 @@ public class Multiplayer implements Runnable {
                     p1.setHead_x(p1.getHead_x() + 1);
                     p1.setDirectionBefore(4);
                 }
-                Collision.CheckCollision(p1);
-                Apple.SpawnApple(p1);
+                Collision collision = new Collision();
+                collision.CheckCollision(p1);
+                Apple apple = new Apple();
+                apple.SpawnApple(p1);
             }
             if (!p2.isGameOver()) {
-                SnakeBody.UpdateArrayList(p2);
+                SnakeBody body = new SnakeBody();
+                body.UpdateArrayList(p2);
                 if (p2.getDirection() == 1) {
                     p2.setHead_y(p2.getHead_y() - 1);
                     p2.setDirectionBefore(1);
@@ -69,13 +73,16 @@ public class Multiplayer implements Runnable {
                     p2.setHead_x(p2.getHead_x() + 1);
                     p2.setDirectionBefore(4);
                 }
-                Collision.CheckCollision(p2);
-                Apple.SpawnApple(p2);
+                Collision collision = new Collision();
+                collision.CheckCollision(p2);
+                Apple apple = new Apple();
+                apple.SpawnApple(p2);
                 while (p1.getApple_x() == p2.getApple_y() && p1.getApple_y() == p2.getApple_y()) {
-                    Apple.SpawnAppleAt(p2);
+                    apple.SpawnAppleAt(p2);
                 }
             }
-            CollisionMultiplayer.PlayerCollision(p1, p2);
+            CollisionMultiplayer collisionMultiplayer = new CollisionMultiplayer();
+            collisionMultiplayer.PlayerCollision(p1, p2);
             GUI.d.repaint();
             GUI.refreshScoreM();
             try {

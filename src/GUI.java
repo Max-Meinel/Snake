@@ -57,7 +57,8 @@ public class GUI {
             jf.add(highScore);
 
             try {
-                JLabel highscore = new JLabel(String.valueOf(SaveData.getHighscore()));
+                SaveData saveData = new SaveData();
+                JLabel highscore = new JLabel(String.valueOf(saveData.getHighscore()));
                 highscore.setFont(new Font("TimesRoman", Font.BOLD, 20));
                 highscore.setForeground(Color.LIGHT_GRAY);
                 highscore.setBounds(460, 5, 80, 30);
