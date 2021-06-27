@@ -23,25 +23,25 @@ public class Singleplayer implements Runnable {
         }
 
         while (!p1.isGameOver()) {
-            SnakeBody.UpdateArrayList(MainMenu.allPlayers.getPlayer(0));
-            if (MainMenu.allPlayers.getPlayer(0).getDirection() == 1) {
-                MainMenu.allPlayers.getPlayer(0).setHead_y(MainMenu.allPlayers.getPlayer(0).getHead_y() - 1);
+            SnakeBody.UpdateArrayList(p1);
+            if (p1.getDirection() == 1) {
+                p1.setHead_y(p1.getHead_y() - 1);
                 p1.setDirectionBefore(1);
             }
-            if (MainMenu.allPlayers.getPlayer(0).getDirection() == 3) {
-                MainMenu.allPlayers.getPlayer(0).setHead_y(MainMenu.allPlayers.getPlayer(0).getHead_y() + 1);
+            if (p1.getDirection() == 3) {
+                p1.setHead_y(p1.getHead_y() + 1);
                 p1.setDirectionBefore(3);
             }
-            if (MainMenu.allPlayers.getPlayer(0).getDirection() == 2) {
-                MainMenu.allPlayers.getPlayer(0).setHead_x(MainMenu.allPlayers.getPlayer(0).getHead_x() - 1);
+            if (p1.getDirection() == 2) {
+                p1.setHead_x(p1.getHead_x() - 1);
                 p1.setDirectionBefore(2);
             }
-            if (MainMenu.allPlayers.getPlayer(0).getDirection() == 4) {
-                MainMenu.allPlayers.getPlayer(0).setHead_x(MainMenu.allPlayers.getPlayer(0).getHead_x() + 1);
+            if (p1.getDirection() == 4) {
+                p1.setHead_x(p1.getHead_x() + 1);
                 p1.setDirectionBefore(4);
             }
-            Collision.CheckCollision(MainMenu.allPlayers.getPlayer(0));
-            Apple.SpawnApple(MainMenu.allPlayers.getPlayer(0));
+            Collision.CheckCollision(p1);
+            Apple.SpawnApple(p1);
             GUI.d.repaint();
             GUI.refreshScore();
             try {
@@ -49,7 +49,6 @@ public class Singleplayer implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
         background.stop();
         GUI.jf.dispose();
