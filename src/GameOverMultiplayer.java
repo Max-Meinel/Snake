@@ -74,7 +74,9 @@ public class GameOverMultiplayer implements Runnable {
             public void actionPerformed(ActionEvent e) {
                 sound.playSound("src/Sounds/select.wav");
                 frame.dispose();
-                MainMenu.Menu();
+                MainMenu mainMenu = new MainMenu();
+                Thread t = new Thread(mainMenu);
+                t.start();
             }
         });
         panel.add(home);

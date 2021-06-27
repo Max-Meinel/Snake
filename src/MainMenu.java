@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
-public class MainMenu {
+public class MainMenu implements Runnable {
     static int posX = 0;
     static int posY = 0;
 
@@ -13,10 +13,9 @@ public class MainMenu {
     static boolean isGerman = false;
     static String savedHighscore = "0";
     static Sound sound = new Sound();
-    public static void main(String[] args) throws IOException {
-        Menu();
-    }
-    public static void Menu() {
+
+    @Override
+    public void run() {
         JFrame frame = new JFrame("Main Menu");
         frame.setSize(950, 490);
         frame.setLocationRelativeTo(null);
