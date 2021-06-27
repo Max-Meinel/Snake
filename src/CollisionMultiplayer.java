@@ -35,7 +35,8 @@ public class CollisionMultiplayer {
             sound.playSound("src/Sounds/crash.wav");
             p1.setGameOver(true);
         }
-        if (resetP2) {Sound sound = new Sound();
+        if (resetP2) {
+            Sound sound = new Sound();
             sound.playSound("src/Sounds/crash.wav");
             p2.setGameOver(true);
         }

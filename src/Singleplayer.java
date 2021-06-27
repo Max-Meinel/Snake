@@ -23,15 +23,15 @@ public class Singleplayer implements Runnable {
                 p1.setHead_y(p1.getHead_y() - 1);
                 p1.setDirectionBefore(1);
             }
-            if (p1.getDirection() == 3) {
+            else if (p1.getDirection() == 3) {
                 p1.setHead_y(p1.getHead_y() + 1);
                 p1.setDirectionBefore(3);
             }
-            if (p1.getDirection() == 2) {
+            else if (p1.getDirection() == 2) {
                 p1.setHead_x(p1.getHead_x() - 1);
                 p1.setDirectionBefore(2);
             }
-            if (p1.getDirection() == 4) {
+            else if (p1.getDirection() == 4) {
                 p1.setHead_x(p1.getHead_x() + 1);
                 p1.setDirectionBefore(4);
             }

@@ -1,8 +1,6 @@
 import javax.sound.sampled.Clip;
 
 public class Multiplayer implements Runnable {
-    public static boolean gameOver1 = false;
-    public static boolean gameOver2 = false;
     @Override
     public void run() {
         Player p1 = new Player();

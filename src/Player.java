@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Player {
-    public  ArrayList<Tail> tails;
+    public ArrayList<Tail> tails;
 
     private int score;
 
