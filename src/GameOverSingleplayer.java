@@ -34,7 +34,7 @@ class GameOverSingleplayer implements Runnable {
         score.setBounds(50, 100, 100, 30);
         panel.add(score);
 
-        JLabel intScore = new JLabel(String.valueOf(MainMenu.allPlayers.getPlayer(0).getScore()), SwingConstants.CENTER);
+        JLabel intScore = new JLabel(String.valueOf(Players.getPlayer(0).getScore()), SwingConstants.CENTER);
         intScore.setForeground(Color.LIGHT_GRAY);
         intScore.setFont(new Font("TimesRoman", Font.BOLD, 25));
         intScore.setBounds(50, 150, 100, 30);
@@ -93,6 +93,6 @@ class GameOverSingleplayer implements Runnable {
         panel.add(playAgain);
 
         frame.setVisible(true);
-        MainMenu.allPlayers.removeAllPlayers();
+        Players.removeAllPlayers();
     }
 }

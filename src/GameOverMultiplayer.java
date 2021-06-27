@@ -22,13 +22,13 @@ public class GameOverMultiplayer implements Runnable {
         panel.setVisible(true);
         frame.add(panel);
 
-        if (MainMenu.allPlayers.getPlayer(0).getScore() < MainMenu.allPlayers.getPlayer(1).getScore()) {
+        if (Players.getPlayer(0).getScore() < Players.getPlayer(1).getScore()) {
             finish = "BLUE WON!";
         }
-        if (MainMenu.allPlayers.getPlayer(0).getScore() > MainMenu.allPlayers.getPlayer(1).getScore()) {
+        if (Players.getPlayer(0).getScore() > Players.getPlayer(1).getScore()) {
             finish = "GREEN WON!";
         }
-        if (MainMenu.allPlayers.getPlayer(0).getScore() == MainMenu.allPlayers.getPlayer(1).getScore()) {
+        if (Players.getPlayer(0).getScore() == Players.getPlayer(1).getScore()) {
             finish = "DRAW!";
         }
 
@@ -44,7 +44,7 @@ public class GameOverMultiplayer implements Runnable {
         score.setBounds(10, 100, 200, 30);
         panel.add(score);
 
-        JLabel intScore = new JLabel(String.valueOf(MainMenu.allPlayers.getPlayer(0).getScore()), SwingConstants.CENTER);
+        JLabel intScore = new JLabel(String.valueOf(Players.getPlayer(0).getScore()), SwingConstants.CENTER);
         intScore.setForeground(Color.LIGHT_GRAY);
         intScore.setFont(new Font("TimesRoman", Font.BOLD, 25));
         intScore.setBounds(50, 150, 100, 30);
@@ -57,7 +57,7 @@ public class GameOverMultiplayer implements Runnable {
         highscore.setBounds(285, 100, 200, 30);
         panel.add(highscore);
 
-        JLabel intScore2 = new JLabel(String.valueOf(MainMenu.allPlayers.getPlayer(1).getScore()), SwingConstants.CENTER);
+        JLabel intScore2 = new JLabel(String.valueOf(Players.getPlayer(1).getScore()), SwingConstants.CENTER);
         intScore2.setForeground(Color.LIGHT_GRAY);
         intScore2.setFont(new Font("TimesRoman", Font.BOLD, 25));
         intScore2.setBounds(325, 150, 100, 30);
@@ -97,6 +97,6 @@ public class GameOverMultiplayer implements Runnable {
         panel.add(playAgain);
 
         frame.setVisible(true);
-        MainMenu.allPlayers.removeAllPlayers();
+        Players.removeAllPlayers();
     }
 }

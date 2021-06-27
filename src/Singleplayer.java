@@ -6,7 +6,7 @@ public class Singleplayer implements Runnable {
     public void run() {
         Player p1 = new Player();
 
-        MainMenu.allPlayers.addPlayer(p1);
+        Players.addPlayer(p1);
 
         p1.addTail(new Tail(3, 7));
         p1.addTail(new Tail(2, 7));
@@ -15,12 +15,6 @@ public class Singleplayer implements Runnable {
         GUI.headImage.setIcon(new ImageIcon("src/Images/headRight.png"));
         Sound sound = new Sound();
         Clip background = sound.playSoundLoop("src/Sounds/background.wav");
-
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         while (!p1.isGameOver()) {
             SnakeBody.UpdateArrayList(p1);

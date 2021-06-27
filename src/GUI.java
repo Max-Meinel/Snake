@@ -147,11 +147,11 @@ public class GUI {
         mBar.addMouseMotionListener(ma);
     }
     public static void refreshScore() {
-        score.setText(String.valueOf(MainMenu.allPlayers.getPlayer(0).getScore()));
+        score.setText(String.valueOf(Players.getPlayer(0).getScore()));
     }
 
     public static void refreshScoreM() {
-        score.setText(String.valueOf(MainMenu.allPlayers.getPlayer(0).getScore()));
-        scoreM.setText(String.valueOf(MainMenu.allPlayers.getPlayer(1).getScore()));
+        score.setText(String.valueOf(Players.getPlayer(0).getScore()));
+        scoreM.setText(String.valueOf(Players.getPlayer(1).getScore()));
     }
 }

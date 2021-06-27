@@ -33,61 +33,61 @@ public class Draw extends JLabel {
         if (GUI.modus.equalsIgnoreCase("singleplayer")) {
             GUI.headImageM.setVisible(false);
             GUI.appleImageM.setVisible(false);
-            if (!MainMenu.allPlayers.getPlayer(0).isGameOver()) {
+            if (!Players.getPlayer(0).isGameOver()) {
                 //Draw Tail
 
-                for (int i = 0; i < MainMenu.allPlayers.getPlayer(0).tails.size(); i++) {
+                for (int i = 0; i < Players.getPlayer(0).tails.size(); i++) {
                     g.setColor(Color.GREEN);
-                    g.fillRect(MainMenu.allPlayers.getPlayer(0).getTail(i).getX() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
+                    g.fillRect(Players.getPlayer(0).getTail(i).getX() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
                     g.setColor(Color.BLACK);
-                    g.drawRect(MainMenu.allPlayers.getPlayer(0).getTail(i).getX() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
+                    g.drawRect(Players.getPlayer(0).getTail(i).getX() * 32 + GUI.xoff, Players.getPlayer(0).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
                 }
 
                 //Draw Head
                 g.setColor(Color.BLACK);
-                g.drawRect(MainMenu.allPlayers.getPlayer(0).getHead_x() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getHead_y() * 32 + GUI.yoff, 32, 32);
+                g.drawRect(Players.getPlayer(0).getHead_x() * 32 + GUI.xoff, Players.getPlayer(0).getHead_y() * 32 + GUI.yoff, 32, 32);
 
-                GUI.headImage.setBounds(MainMenu.allPlayers.getPlayer(0).getHead_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
+                GUI.headImage.setBounds(Players.getPlayer(0).getHead_x() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
 
                 //Draw Apple
-                GUI.appleImage.setBounds(MainMenu.allPlayers.getPlayer(0).getApple_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
+                GUI.appleImage.setBounds(Players.getPlayer(0).getApple_x() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
             }
         }
         else {
             //Draw Tail
-            if (!MainMenu.allPlayers.getPlayer(0).isGameOver()) {
-                for (int i = 0; i < MainMenu.allPlayers.getPlayer(0).tails.size(); i++) {
+            if (!Players.getPlayer(0).isGameOver()) {
+                for (int i = 0; i < Players.getPlayer(0).tails.size(); i++) {
                     g.setColor(Color.GREEN);
-                    g.fillRect(MainMenu.allPlayers.getPlayer(0).getTail(i).getX() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
+                    g.fillRect(Players.getPlayer(0).getTail(i).getX() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
                     g.setColor(Color.BLACK);
-                    g.drawRect(MainMenu.allPlayers.getPlayer(0).getTail(i).getX() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
+                    g.drawRect(Players.getPlayer(0).getTail(i).getX() * 32 + GUI.xoff, Players.getPlayer(0).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
                 }
             }
 
-            if (!MainMenu.allPlayers.getPlayer(1).isGameOver()) {
-                for (int i = 0; i < MainMenu.allPlayers.getPlayer(1).tails.size(); i++) {
+            if (!Players.getPlayer(1).isGameOver()) {
+                for (int i = 0; i < Players.getPlayer(1).tails.size(); i++) {
                     g.setColor(Color.BLUE);
-                    g.fillRect(MainMenu.allPlayers.getPlayer(1).getTail(i).getX() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(1).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
+                    g.fillRect(Players.getPlayer(1).getTail(i).getX() * 32 + 1 + GUI.xoff, Players.getPlayer(1).getTail(i).getY() * 32 + 1 + GUI.yoff, 31, 31);
                     g.setColor(Color.BLACK);
-                    g.drawRect(MainMenu.allPlayers.getPlayer(1).getTail(i).getX() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(1).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
+                    g.drawRect(Players.getPlayer(1).getTail(i).getX() * 32 + GUI.xoff, Players.getPlayer(1).getTail(i).getY() * 32 + GUI.yoff, 32, 32);
                 }
             }
 
 
             //Draw Head
-            if (!MainMenu.allPlayers.getPlayer(0).isGameOver()) {
-                GUI.headImage.setBounds(MainMenu.allPlayers.getPlayer(0).getHead_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
+            if (!Players.getPlayer(0).isGameOver()) {
+                GUI.headImage.setBounds(Players.getPlayer(0).getHead_x() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
                 g.setColor(Color.BLACK);
-                g.drawRect(MainMenu.allPlayers.getPlayer(0).getHead_x() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getHead_y() * 32 + GUI.yoff, 32, 32);
+                g.drawRect(Players.getPlayer(0).getHead_x() * 32 + GUI.xoff, Players.getPlayer(0).getHead_y() * 32 + GUI.yoff, 32, 32);
             }
             else {
                 GUI.headImage.setVisible(false);
             }
 
-            if (!MainMenu.allPlayers.getPlayer(1).isGameOver()) {
-                GUI.headImageM.setBounds(MainMenu.allPlayers.getPlayer(1).getHead_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(1).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
+            if (!Players.getPlayer(1).isGameOver()) {
+                GUI.headImageM.setBounds(Players.getPlayer(1).getHead_x() * 32 + 1 + GUI.xoff, Players.getPlayer(1).getHead_y() * 32 + 1 + GUI.yoff, 31, 31);
                 g.setColor(Color.BLACK);
-                g.drawRect(MainMenu.allPlayers.getPlayer(1).getHead_x() * 32 + GUI.xoff, MainMenu.allPlayers.getPlayer(1).getHead_y() * 32 + GUI.yoff, 32, 32);
+                g.drawRect(Players.getPlayer(1).getHead_x() * 32 + GUI.xoff, Players.getPlayer(1).getHead_y() * 32 + GUI.yoff, 32, 32);
             }
             else {
                 GUI.headImageM.setVisible(false);
@@ -96,14 +96,14 @@ public class Draw extends JLabel {
 
 
             //Draw Apple
-            if (!MainMenu.allPlayers.getPlayer(0).isGameOver()) {
-                GUI.appleImage.setBounds(MainMenu.allPlayers.getPlayer(0).getApple_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(0).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
+            if (!Players.getPlayer(0).isGameOver()) {
+                GUI.appleImage.setBounds(Players.getPlayer(0).getApple_x() * 32 + 1 + GUI.xoff, Players.getPlayer(0).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
             }
             else {
                 GUI.appleImage.setVisible(false);
             }
-            if (!MainMenu.allPlayers.getPlayer(1).isGameOver()) {
-                GUI.appleImageM.setBounds(MainMenu.allPlayers.getPlayer(1).getApple_x() * 32 + 1 + GUI.xoff, MainMenu.allPlayers.getPlayer(1).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
+            if (!Players.getPlayer(1).isGameOver()) {
+                GUI.appleImageM.setBounds(Players.getPlayer(1).getApple_x() * 32 + 1 + GUI.xoff, Players.getPlayer(1).getApple_y() * 32 + 1 + GUI.yoff, 31, 31);
             }
             else {
                 try {

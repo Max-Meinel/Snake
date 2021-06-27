@@ -7,8 +7,8 @@ public class Multiplayer implements Runnable {
     public void run() {
         Player p1 = new Player();
         Player p2 = new Player();
-        MainMenu.allPlayers.addPlayer(p1);
-        MainMenu.allPlayers.addPlayer(p2);
+        Players.addPlayer(p1);
+        Players.addPlayer(p2);
         p1.setDirection(1);
         p1.setHead_x(5);
         p1.setHead_y(8);
@@ -29,55 +29,50 @@ public class Multiplayer implements Runnable {
         Sound sound = new Sound();
         Clip background = sound.playSoundLoop("src/Sounds/background.wav");
 
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         while (!p1.isGameOver() || !p2.isGameOver()) {
             if (!p1.isGameOver()) {
-                SnakeBody.UpdateArrayList(MainMenu.allPlayers.getPlayer(0));
-                if (MainMenu.allPlayers.getPlayer(0).getDirection() == 1) {
-                    MainMenu.allPlayers.getPlayer(0).setHead_y(MainMenu.allPlayers.getPlayer(0).getHead_y() - 1);
+                SnakeBody.UpdateArrayList(p1);
+                if (Players.getPlayer(0).getDirection() == 1) {
+                    p1.setHead_y(p1.getHead_y() - 1);
                     p1.setDirectionBefore(1);
                 }
-                if (MainMenu.allPlayers.getPlayer(0).getDirection() == 3) {
-                    MainMenu.allPlayers.getPlayer(0).setHead_y(MainMenu.allPlayers.getPlayer(0).getHead_y() + 1);
+                if (p1.getDirection() == 3) {
+                    p1.setHead_y(p1.getHead_y() + 1);
                     p1.setDirectionBefore(3);
                 }
-                if (MainMenu.allPlayers.getPlayer(0).getDirection() == 2) {
-                    MainMenu.allPlayers.getPlayer(0).setHead_x(MainMenu.allPlayers.getPlayer(0).getHead_x() - 1);
+                if (p1.getDirection() == 2) {
+                    p1.setHead_x(p1.getHead_x() - 1);
                     p1.setDirectionBefore(2);
                 }
-                if (MainMenu.allPlayers.getPlayer(0).getDirection() == 4) {
-                    MainMenu.allPlayers.getPlayer(0).setHead_x(MainMenu.allPlayers.getPlayer(0).getHead_x() + 1);
+                if (p1.getDirection() == 4) {
+                    p1.setHead_x(p1.getHead_x() + 1);
                     p1.setDirectionBefore(4);
                 }
-                Collision.CheckCollision(MainMenu.allPlayers.getPlayer(0));
-                Apple.SpawnApple(MainMenu.allPlayers.getPlayer(0));
+                Collision.CheckCollision(p1);
+                Apple.SpawnApple(p1);
             }
             if (!p2.isGameOver()) {
-                SnakeBody.UpdateArrayList(MainMenu.allPlayers.getPlayer(1));
-                if (MainMenu.allPlayers.getPlayer(1).getDirection() == 1) {
-                    MainMenu.allPlayers.getPlayer(1).setHead_y(MainMenu.allPlayers.getPlayer(1).getHead_y() - 1);
+                SnakeBody.UpdateArrayList(p2);
+                if (p2.getDirection() == 1) {
+                    p2.setHead_y(p2.getHead_y() - 1);
                     p2.setDirectionBefore(1);
                 }
-                if (MainMenu.allPlayers.getPlayer(1).getDirection() == 3) {
-                    MainMenu.allPlayers.getPlayer(1).setHead_y(MainMenu.allPlayers.getPlayer(1).getHead_y() + 1);
+                if (p2.getDirection() == 3) {
+                    p2.setHead_y(p2.getHead_y() + 1);
                     p2.setDirectionBefore(3);
                 }
-                if (MainMenu.allPlayers.getPlayer(1).getDirection() == 2) {
-                    MainMenu.allPlayers.getPlayer(1).setHead_x(MainMenu.allPlayers.getPlayer(1).getHead_x() - 1);
+                if (p2.getDirection() == 2) {
+                    p2.setHead_x(p2.getHead_x() - 1);
                     p2.setDirectionBefore(2);
                 }
-                if (MainMenu.allPlayers.getPlayer(1).getDirection() == 4) {
-                    MainMenu.allPlayers.getPlayer(1).setHead_x(MainMenu.allPlayers.getPlayer(1).getHead_x() + 1);
+                if (p2.getDirection() == 4) {
+                    p2.setHead_x(p2.getHead_x() + 1);
                     p2.setDirectionBefore(4);
                 }
-                Collision.CheckCollision(MainMenu.allPlayers.getPlayer(1));
-                Apple.SpawnApple(MainMenu.allPlayers.getPlayer(1));
+                Collision.CheckCollision(p2);
+                Apple.SpawnApple(p2);
                 while (p1.getApple_x() == p2.getApple_y() && p1.getApple_y() == p2.getApple_y()) {
-                    Apple.SpawnAppleAt(MainMenu.allPlayers.getPlayer(1));
+                    Apple.SpawnAppleAt(p2);
                 }
             }
             CollisionMultiplayer.PlayerCollision(p1, p2);

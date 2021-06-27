@@ -16,11 +16,6 @@ public class Player {
     private int direction;
     private int directionBefore;
 
-    private boolean newTail;
-
-    public static int width = 800, heigth = 600;
-    public static int xoff = 130, yoff = 20;
-
     public Player() {
         this.head_x = 4;
         this.head_y = 7;
@@ -28,19 +23,6 @@ public class Player {
         this.apple_y = 7;
         this.direction = 4;
         this.tails = new ArrayList<>();
-        this.score = 0;
-    }
-
-    public void resetGame() {
-        this.head_x = 4;
-        this.head_y = 7;
-        this.apple_x = 8;
-        this.apple_y = 7;
-        this.direction = 4;
-        this.directionBefore = 2;
-        this.tails = new ArrayList<>();
-        this.addTail(new Tail(3, 7));
-        this.addTail(new Tail(2, 7));
         this.score = 0;
     }
 
@@ -110,38 +92,6 @@ public class Player {
 
     public void setDirection(int direction) {
         this.direction = direction;
-    }
-
-    public static int getWidth() {
-        return width;
-    }
-
-    public static void setWidth(int width) {
-        Player.width = width;
-    }
-
-    public static int getHeigth() {
-        return heigth;
-    }
-
-    public static void setHeigth(int heigth) {
-        Player.heigth = heigth;
-    }
-
-    public static int getXoff() {
-        return xoff;
-    }
-
-    public static void setXoff(int xoff) {
-        Player.xoff = xoff;
-    }
-
-    public static int getYoff() {
-        return yoff;
-    }
-
-    public static void setYoff(int yoff) {
-        Player.yoff = yoff;
     }
 
     public int getScore() {

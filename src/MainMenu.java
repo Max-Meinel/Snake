@@ -9,12 +9,9 @@ public class MainMenu {
 
     private static boolean isSingleplayer = true;
     private static boolean isOverlayVisible = false;
-    private static boolean isLoginVisible = false;
     private static boolean areRulesVisible = false;
     private static boolean isGerman = false;
     private static String savedHighscore = "0";
-    private static boolean login = false;
-    public static Players allPlayers = new Players();
     private static Sound sound = new Sound();
 
     public static void main(String[] args) throws IOException {

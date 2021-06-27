@@ -1,21 +1,17 @@
 import java.util.ArrayList;
 
 public class Players {
-    public ArrayList<Player> players;
+    public static ArrayList<Player> players = new ArrayList<>();
 
-    public Players() {
-        this.players = new ArrayList<>();
-    }
-
-    public Player getPlayer(int i) {
+    public static Player getPlayer(int i) {
         return players.get(i);
     }
 
-    public void removeAllPlayers() {
+    public static void removeAllPlayers() {
         players.clear();
     }
 
-    public void addPlayer(Player player) {
-        this.players.add(player);
+    public static void addPlayer(Player player) {
+        players.add(player);
     }
 }
